@@ -4,101 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvimento de Projetos com Integração de IA</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Estilos para as partículas de IA */
-        .particles-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .particle-ia {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: rgba(52, 152, 219, 0.5);
-            border-radius: 50%;
-        }
-        
-        .connection {
-            position: absolute;
-            height: 1px;
-            transform-origin: left center;
-            background: linear-gradient(90deg, rgba(52, 152, 219, 0.3), rgba(52, 152, 219, 0.05));
-            opacity: 0.2;
-            pointer-events: none;
-        }
-        
-        /* Ajustes para os títulos */
-        h1, h2, h3 {
-            max-width: 100%;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .slide .content {
-            overflow: auto;
-            padding: 20px;
-            max-height: 100%;
-        }
-        
-        /* Estilo uniforme para links nas caixas de fluxo */
-        .flow-item a, .flow-item a.canva-link {
-            color: inherit;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-        
-        .flow-item a:hover, .flow-item a.canva-link:hover {
-            color: #3498db;
-            text-decoration: underline;
-        }
-        
-        .flow-item a i, .flow-item a.canva-link i {
-            margin-left: 8px;
-        }
-        
-        /* Melhor alinhamento para os textos nos slides 4 e 5 */
-        .two-col .col ul {
-            padding-left: 20px;
-            text-align: left;
-            margin-top: 10px;
-        }
-        
-        .two-col .col ul li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 5px;
-        }
-        
-        .two-col .col h3 {
-            text-align: left;
-            margin-bottom: 15px;
-        }
-        
-        /* Estilo para o link no PRD */
-        .prd-link {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .prd-link:hover {
-            text-decoration: underline;
-            color: #2980b9;
-        }
-    </style>
 </head>
 <body>
     <div class="navigation">
@@ -196,7 +103,7 @@
             <div class="slide-number">3</div>
         </div>
 
-        <!-- Slide 4: Fase Inicial - ATUALIZADO com marcadores e melhor alinhamento -->
+        <!-- Slide 4: Fase Inicial -->
         <div class="slide" id="slide4">
             <div class="content">
                 <h2>Fase Inicial</h2>
@@ -224,7 +131,7 @@
             <div class="slide-number">4</div>
         </div>
 
-        <!-- Slide 5: Fase de Análise - ATUALIZADO com marcadores e melhor alinhamento -->
+        <!-- Slide 5: Fase de Análise -->
         <div class="slide" id="slide5">
             <div class="content">
                 <h2>Fase de Análise</h2>
@@ -252,7 +159,7 @@
             <div class="slide-number">5</div>
         </div>
 
-        <!-- Slide 6: Fase de Documentação - ATUALIZADO com link para o ADR -->
+        <!-- Slide 6: Fase de Documentação -->
         <div class="slide" id="slide6">
             <div class="content">
                 <h2>Fase de Documentação</h2>
@@ -273,7 +180,7 @@
             <div class="slide-number">6</div>
         </div>
 
-        <!-- Slide 7: Fase de Implementação - ATUALIZADO para fluxo linear -->
+        <!-- Slide 7: Fase de Implementação -->
         <div class="slide" id="slide7">
             <div class="content">
                 <h2>Fase de Implementação</h2>
@@ -306,7 +213,7 @@
             <div class="slide-number">8</div>
         </div>
 
-        <!-- Slide 9: Atividades Práticas - ATUALIZADO com marcadores -->
+        <!-- Slide 9: Atividades Práticas -->
         <div class="slide" id="slide9">
             <div class="content">
                 <h2>Atividades Práticas</h2>
@@ -332,7 +239,7 @@
             <div class="slide-number">9</div>
         </div>
 
-        <!-- Slide 10: Avaliação e Recursos - ATUALIZADO com marcadores -->
+        <!-- Slide 10: Avaliação e Recursos -->
         <div class="slide" id="slide10">
             <div class="content">
                 <h2>Avaliação e Recursos</h2>
@@ -378,229 +285,8 @@
             <div class="slide-number">11</div>
             <div class="footer">Desenvolvimento de Projetos com Integração de IA</div>
         </div>
-
     </div>
 
-    <script>
-        const slideContainer = document.querySelector('.slide-container');
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        let currentSlide = 0;
-
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0) slideIndex = 0;
-            if (slideIndex >= slides.length) slideIndex = slides.length - 1;
-            
-            currentSlide = slideIndex;
-            slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            goToSlide(currentSlide - 1);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            goToSlide(currentSlide + 1);
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                goToSlide(currentSlide + 1);
-            } else if (e.key === 'ArrowLeft') {
-                goToSlide(currentSlide - 1);
-            }
-        });
-
-        // Update current slide on scroll
-        slideContainer.addEventListener('scroll', () => {
-            const containerTop = slideContainer.scrollTop;
-            for (let i = 0; i < slides.length; i++) {
-                const slideTop = slides[i].offsetTop;
-                if (Math.abs(containerTop - slideTop) < 100) {
-                    currentSlide = i;
-                    break;
-                }
-            }
-        });
-
-        // Adicione este script ao final do seu arquivo, depois do script existente
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('particles-ia');
-            const numParticles = 50; // Ajuste conforme necessário
-            const particles = [];
-            const connections = [];
-            const connectionDistance = 150;
-            
-            // Criar partículas
-            for (let i = 0; i < numParticles; i++) {
-                createParticle();
-            }
-            
-            // Função para criar partículas
-            function createParticle() {
-                const particle = document.createElement('div');
-                particle.classList.add('particle-ia');
-                
-                // Posição aleatória
-                const x = Math.random() * window.innerWidth;
-                const y = Math.random() * window.innerHeight;
-                
-                // Velocidade aleatória
-                const vx = (Math.random() - 0.5) * 0.5;
-                const vy = (Math.random() - 0.5) * 0.5;
-                
-                // Tamanho aleatório
-                const size = Math.random() * 2 + 2;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${x}px`;
-                particle.style.top = `${y}px`;
-                
-                // Adicionar um brilho pulsante para simular "atividade neural"
-                particle.style.animation = `pulse ${Math.random() * 3 + 2}s infinite alternate`;
-                
-                container.appendChild(particle);
-                
-                particles.push({
-                    element: particle,
-                    x: x,
-                    y: y,
-                    vx: vx,
-                    vy: vy,
-                    size: size,
-                    connections: []
-                });
-                
-                return particles[particles.length - 1];
-            }
-            
-            // Criar conexões iniciais entre nós próximos
-            function updateConnections() {
-                // Limpar conexões existentes
-                connections.forEach(conn => {
-                    if (conn.element && conn.element.parentNode) {
-                        conn.element.parentNode.removeChild(conn.element);
-                    }
-                });
-                connections.length = 0;
-                
-                // Criar novas conexões
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const p1 = particles[i];
-                        const p2 = particles[j];
-                        
-                        // Calcular distância entre partículas
-                        const dx = p2.x - p1.x;
-                        const dy = p2.y - p1.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        // Conectar apenas partículas próximas
-                        if (distance < connectionDistance) {
-                            const opacity = 1 - (distance / connectionDistance);
-                            createConnection(p1, p2, opacity);
-                        }
-                    }
-                }
-            }
-            
-            // Criar uma conexão visual entre duas partículas
-            function createConnection(p1, p2, opacity) {
-                const connection = document.createElement('div');
-                connection.classList.add('connection');
-                
-                // Posição e dimensionamento
-                const dx = p2.x - p1.x;
-                const dy = p2.y - p1.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const angle = Math.atan2(dy, dx);
-                
-                connection.style.width = `${distance}px`;
-                connection.style.left = `${p1.x}px`;
-                connection.style.top = `${p1.y}px`;
-                connection.style.opacity = opacity * 0.3;
-                connection.style.transform = `rotate(${angle}rad)`;
-                
-                container.appendChild(connection);
-                
-                connections.push({
-                    element: connection,
-                    p1: p1,
-                    p2: p2
-                });
-            }
-            
-            // Animação das partículas
-            function animate() {
-                for (let i = 0; i < particles.length; i++) {
-                    const p = particles[i];
-                    
-                    // Atualizar posição
-                    p.x += p.vx;
-                    p.y += p.vy;
-                    
-                    // Redirecionar se bater nas bordas
-                    if (p.x < 0 || p.x > window.innerWidth) {
-                        p.vx = -p.vx;
-                    }
-                    
-                    if (p.y < 0 || p.y > window.innerHeight) {
-                        p.vy = -p.vy;
-                    }
-                    
-                    // Manter dentro dos limites da tela
-                    p.x = Math.max(0, Math.min(window.innerWidth, p.x));
-                    p.y = Math.max(0, Math.min(window.innerHeight, p.y));
-                    
-                    // Atualizar posição visual
-                    p.element.style.left = `${p.x}px`;
-                    p.element.style.top = `${p.y}px`;
-                }
-                
-                // Atualizar conexões a cada X frames para economizar processamento
-                if (window.animationCounter % 10 === 0) {
-                    updateConnections();
-                }
-                
-                window.animationCounter = (window.animationCounter || 0) + 1;
-                
-                requestAnimationFrame(animate);
-            }
-            
-            // Recalcular em caso de redimensionamento da janela
-            window.addEventListener('resize', function() {
-                for (let i = 0; i < particles.length; i++) {
-                    const p = particles[i];
-                    
-                    // Manter partículas dentro dos novos limites
-                    p.x = Math.min(p.x, window.innerWidth);
-                    p.y = Math.min(p.y, window.innerHeight);
-                    
-                    p.element.style.left = `${p.x}px`;
-                    p.element.style.top = `${p.y}px`;
-                }
-                
-                updateConnections();
-            });
-            
-            // Adicionar CSS para animação de pulso
-            const style = document.createElement('style');
-            style.innerHTML = `
-                @keyframes pulse {
-                    0% { opacity: 0.3; transform: scale(0.8); }
-                    50% { opacity: 0.8; transform: scale(1.2); }
-                    100% { opacity: 0.3; transform: scale(0.8); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Iniciar animação
-            animate();
-            updateConnections();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
