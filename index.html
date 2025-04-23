@@ -2,108 +2,20 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
     <title>Desenvolvimento de Projetos com Integração de IA</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Estilos para as partículas de IA */
-        .particles-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .particle-ia {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: rgba(52, 152, 219, 0.5);
-            border-radius: 50%;
-        }
-        
-        .connection {
-            position: absolute;
-            height: 1px;
-            transform-origin: left center;
-            background: linear-gradient(90deg, rgba(52, 152, 219, 0.3), rgba(52, 152, 219, 0.05));
-            opacity: 0.2;
-            pointer-events: none;
-        }
-        
-        /* Ajustes para os títulos */
-        h1, h2, h3 {
-            max-width: 100%;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .slide .content {
-            overflow: auto;
-            padding: 20px;
-            max-height: 100%;
-        }
-        
-        /* Estilo uniforme para links nas caixas de fluxo */
-        .flow-item a, .flow-item a.canva-link {
-            color: inherit;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-        
-        .flow-item a:hover, .flow-item a.canva-link:hover {
-            color: #3498db;
-            text-decoration: underline;
-        }
-        
-        .flow-item a i, .flow-item a.canva-link i {
-            margin-left: 8px;
-        }
-        
-        /* Melhor alinhamento para os textos nos slides 4 e 5 */
-        .two-col .col ul {
-            padding-left: 20px;
-            text-align: left;
-            margin-top: 10px;
-        }
-        
-        .two-col .col ul li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 5px;
-        }
-        
-        .two-col .col h3 {
-            text-align: left;
-            margin-bottom: 15px;
-        }
-        
-        /* Estilo para o link no PRD */
-        .prd-link {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .prd-link:hover {
-            text-decoration: underline;
-            color: #2980b9;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navigation">
-        <button class="nav-btn" id="prev">Anterior</button>
-        <button class="nav-btn" id="next">Próximo</button>
+        <button class="nav-btn" id="prev">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <div class="slide-indicator" id="slide-indicator">1/11</div>
+        <button class="nav-btn" id="next">
+            <i class="fas fa-chevron-down"></i>
+        </button>
     </div>
 
     <div class="particles-container" id="particles-ia"></div>
@@ -111,31 +23,41 @@
     <div class="slide-container">
         <!-- Slide 1: Capa -->
         <div class="slide" id="slide1">
+            <!-- Elementos decorativos -->
+            <div class="circle-decoration"></div>
+            <div class="dots-decoration"></div>
+            
             <!-- Logo Institucional -->
             <div class="logo">
                 <img src="https://www.es.senac.br/assets/img/logo.webp" alt="Logo SENAC">
             </div>
+            
             <div class="content">
                 <h1>Desenvolvimento de Projetos com Integração de IA</h1>
                 <h2>Uma abordagem metodológica</h2>
-                <p class="intro-text">
+                <p class="intro-text" style="text-align: center !important; margin-left: auto; margin-right: auto; display: block; width: 100%;">
                     Guia prático para integrar Inteligência Artificial no fluxo de desenvolvimento de projetos
                 </p>
-                <p class="author"> <strong>Professor: Guilherme Peterlini</strong></p>
-                <!-- QR Code -->
-                <div style="margin-top: 20px; display: flex; justify-content: center;">
-                    <div style="text-align: center;">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://guilhermepeterlini.com.br/Projetos-com-Ia/" alt="QR Code para Projetos com IA">
-                        <p style="margin-top: 5px; font-size: 0.8rem;">Acesse o material online</p>
+                <p class="author"><strong>Professor: Guilherme Peterlini</strong></p>
+                
+                <!-- QR Code modernizado e centralizado -->
+                <div class="qr-container" style="margin: 20px auto; max-width: 400px; display: flex; justify-content: center; align-items: center;">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://guilhermepeterlini.com.br/Projetos-com-Ia/" alt="QR Code para Projetos com IA" class="qr-code">
+                    <div class="qr-text">
+                        <strong>Acesse o material completo</strong><br>
+                        Escaneie o QR Code com seu smartphone<br>
+                        ou acesse: <a href="https://guilhermepeterlini.com.br/Projetos-com-Ia/" target="_blank">guilhermepeterlini.com.br/Projetos-com-Ia</a>
                     </div>
                 </div>
             </div>
-            <div class="slide-number">1</div>
+            <div class="slide-number">1/11</div>
             <div class="footer">Abril, 2025</div>
         </div>
 
         <!-- Slide 2: Objetivos da Aula -->
         <div class="slide" id="slide2">
+            <div class="circle-decoration"></div>
+            <div class="dots-decoration"></div>
             <div class="content">
                 <h2>Objetivos da Aula</h2>
                 <ul>
@@ -145,12 +67,13 @@
                     <li><i class="fas fa-check-circle"></i> Aplicar metodologia estruturada em projetos reais.</li>
                 </ul>
             </div>
-            <div class="slide-number">2</div>
+            <div class="slide-number">2/11</div>
         </div>
 
-        <!-- Slide 3: Visão Geral do Fluxo -->
+        <!-- Slide 3: Visão Geral do Fluxo - Ajustado -->
         <div class="slide" id="slide3">
-            <div class="content">
+            <div class="circle-decoration"></div>
+            <div class="content scrollable-content">
                 <h2>Visão Geral do Fluxo</h2>
                 <div class="flow-container">
                     <div class="flow-item">
@@ -164,7 +87,7 @@
                         </a>
                     </div>
                     <div class="arrow-down"></div>
-                    <div class="flow-item">
+                    <div class="flow-item flow-item-medium">
                         <a href="https://guilhermepeterlini.com.br/Brainstorm-com-as-IAS/" 
                            class="canva-link" 
                            target="_blank"
@@ -175,11 +98,11 @@
                         </a>
                     </div>
                     <div class="arrow-down"></div>
-                    <div class="diamond">
-                        <div class="diamond-content">Analisar Prós e Contras</div>
+                    <div class="diamond" style="width: 100px; height: 100px; margin: 20px;">
+                        <div class="diamond-content" style="font-size: 0.9rem;">Analisar Prós e Contras</div>
                     </div>
                     <div class="arrow-down"></div>
-                    <div class="flow-item">
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
                         <a href="https://recoverit.wondershare.com.br/online-file/ai-tools-for-literature-review.html" 
                            class="canva-link" 
                            target="_blank"
@@ -190,14 +113,15 @@
                         </a>
                     </div>
                     <div class="arrow-down"></div>
-                    <div class="flow-item">Obter Contexto para o Projeto</div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">Obter Contexto para o Projeto</div>
                 </div>
             </div>
-            <div class="slide-number">3</div>
+            <div class="slide-number">3/11</div>
         </div>
 
-        <!-- Slide 4: Fase Inicial - ATUALIZADO com marcadores e melhor alinhamento -->
+        <!-- Slide 4: Fase Inicial -->
         <div class="slide" id="slide4">
+            <div class="dots-decoration"></div>
             <div class="content">
                 <h2>Fase Inicial</h2>
                 <div class="two-col">
@@ -221,11 +145,12 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">4</div>
+            <div class="slide-number">4/11</div>
         </div>
 
-        <!-- Slide 5: Fase de Análise - ATUALIZADO com marcadores e melhor alinhamento -->
+        <!-- Slide 5: Fase de Análise -->
         <div class="slide" id="slide5">
+            <div class="circle-decoration"></div>
             <div class="content">
                 <h2>Fase de Análise</h2>
                 <div class="two-col">
@@ -249,91 +174,163 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">5</div>
+            <div class="slide-number">5/11</div>
         </div>
 
-        <!-- Slide 6: Fase de Documentação - ATUALIZADO com link para o ADR -->
+        <!-- Slide 6: Fase de Documentação - Ajustado -->
         <div class="slide" id="slide6">
-            <div class="content">
+            <div class="dots-decoration"></div>
+            <div class="content" style="overflow-y: auto; max-height: 85vh;">
                 <h2>Fase de Documentação</h2>
-                <div class="flow-container">
-                    <div class="flow-item">Obter Contexto para o Projeto</div>
-                    <div class="arrow-down"></div>
-                    <div class="flow-item">Solicitar Geração de Documentos</div>
-                    <div class="arrow-down"></div>
-                    <div class="flow-item">Gerar PRD e ADR</div>
-                    <div class="arrow-down"></div>
-                    <div class="flow-item">Revisar Documentos</div>
+                <div class="flow-container" style="gap: 10px; margin: 15px 0;">
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-book-open" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Obter Contexto para o Projeto</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down" style="margin: 0;"></div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-file-alt" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Solicitar Geração de Documentos</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down" style="margin: 0;"></div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-clipboard-list" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Gerar PRD e ADR</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down" style="margin: 0;"></div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-check-double" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Revisar Documentos</span>
+                        </div>
+                    </div>
                 </div>
-                <div style="text-align: left; margin-top: 30px;">
-                    <p><strong>PRD:</strong> <a href="https://pm3.com.br/glossario/prd-product-requirements-document/" class="prd-link" target="_blank" rel="noopener">Product Requirements Document <i class="fas fa-external-link-alt"></i></a></p>
-                    <p><strong>ADR:</strong> <a href="https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file#what-is-an-architecture-decision-record" class="prd-link" target="_blank" rel="noopener">Architecture Decision Records <i class="fas fa-external-link-alt"></i></a></p>
+                <div style="text-align: left; margin-top: 15px; background: rgba(255,255,255,0.8); padding: 10px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <p style="margin: 5px 0; font-size: 0.9rem;"><strong>PRD:</strong> <a href="https://pm3.com.br/glossario/prd-product-requirements-document/" class="prd-link" target="_blank" rel="noopener">Product Requirements Document <i class="fas fa-external-link-alt"></i></a></p>
+                    <p style="margin: 5px 0; font-size: 0.9rem;"><strong>ADR:</strong> <a href="https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file#what-is-an-architecture-decision-record" class="prd-link" target="_blank" rel="noopener">Architecture Decision Records <i class="fas fa-external-link-alt"></i></a></p>
                 </div>
             </div>
-            <div class="slide-number">6</div>
+            <div class="slide-number">6/11</div>
         </div>
 
-        <!-- Slide 7: Fase de Implementação - ATUALIZADO para fluxo linear -->
+        <!-- Slide 7: Fase de Implementação - Ajustado -->
         <div class="slide" id="slide7">
-            <div class="content">
+            <div class="circle-decoration"></div>
+            <div class="content" style="overflow-y: auto; max-height: 85vh;">
                 <h2>Fase de Implementação</h2>
-                <div class="flow-container">
-                    <div class="flow-item">Aprender Tecnologias Necessárias</div>
-                    <div class="arrow-down"></div>
-                    <div class="flow-item">Gerar Códigos Pontuais pela IA</div>
-                    <div class="arrow-down"></div>
-                    <div class="flow-item">Codificar à Mão</div>
-                    <div class="arrow-down"></div>
-                    <div class="flow-item">Revisões Esporádicas pela IA</div>
+                <div class="flow-container" style="gap: 10px; margin: 15px 0;">
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-graduation-cap" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Aprender Tecnologias Necessárias</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down" style="margin: 0;"></div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-robot" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Gerar Códigos Pontuais pela IA</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down" style="margin: 0;"></div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-keyboard" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Codificar à Mão</span>
+                        </div>
+                    </div>
+                    <div class="arrow-down" style="margin: 0;"></div>
+                    <div class="flow-item" style="min-width: 250px; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fas fa-sync-alt" style="color: var(--primary); font-size: 1.2rem;"></i>
+                            <span>Revisões Esporádicas pela IA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="slide-number">7</div>
+            <div class="slide-number">7/11</div>
         </div>
 
-        <!-- Slide 8: Benefícios do Método -->
+        <!-- Slide 8: Benefícios do Método - Com marcadores -->
         <div class="slide" id="slide8">
-            <div class="content">
+            <div class="dots-decoration"></div>
+            <div class="content" style="overflow-y: auto; max-height: 85vh;">
                 <h2>Benefícios do Método</h2>
-                <ul>
-                    <li><span class="highlight">Aceleração</span> do processo de desenvolvimento</li>
-                    <li>Manutenção do <span class="highlight">controle humano</span> sobre decisões críticas</li>
-                    <li><span class="highlight">Redução</span> de erros e retrabalho</li>
-                    <li>Aproveitamento das <span class="highlight">competências específicas</span> de cada IA</li>
-                    <li>Criação de documentação <span class="highlight">mais consistente</span> e completa</li>
-                    <li><span class="highlight">Aprendizado contínuo</span> durante o processo</li>
+                <ul style="list-style-type: disc; padding-left: 25px;">
+                    <li style="display: list-item; align-items: baseline; margin-bottom: 15px;">
+                        <span class="highlight">Aceleração</span> do processo de desenvolvimento.
+                    </li>
+                    <li style="display: list-item; align-items: baseline; margin-bottom: 15px;">
+                        Manutenção do <span class="highlight">controle humano</span> sobre decisões críticas.
+                    </li>
+                    <li style="display: list-item; align-items: baseline; margin-bottom: 15px;">
+                        <span class="highlight">Redução</span> de erros e retrabalho.
+                    </li>
+                    <li style="display: list-item; align-items: baseline; margin-bottom: 15px;">
+                        Aproveitamento das <span class="highlight">competências específicas</span> de cada IA.
+                    </li>
+                    <li style="display: list-item; align-items: baseline; margin-bottom: 15px;">
+                        Criação de documentação <span class="highlight">mais consistente</span> e completa.
+                    </li>
+                    <li style="display: list-item; align-items: baseline; margin-bottom: 15px;">
+                        <span class="highlight">Aprendizado contínuo</span> durante o processo.
+                    </li>
                 </ul>
             </div>
-            <div class="slide-number">8</div>
+            <div class="slide-number">8/11</div>
         </div>
 
-        <!-- Slide 9: Atividades Práticas - ATUALIZADO com marcadores -->
+        <!-- Slide 9: Atividades Práticas - Corrigido alinhamento -->
         <div class="slide" id="slide9">
-            <div class="content">
+            <div class="circle-decoration"></div>
+            <div class="content" style="overflow-y: auto; max-height: 85vh;">
                 <h2>Atividades Práticas</h2>
-                <ul>
-                    <li>
-                        <i class="fas fa-users"></i> <strong>Workshop de Brainstorming</strong>
-                        <p>Simular uma sessão de ideação com 3 ferramentas de IA diferentes</p>
-                    </li>
-                    <li>
-                        <i class="fas fa-chart-bar"></i> <strong>Análise Comparativa</strong>
-                        <p>Avaliar prós e contras de diferentes abordagens para um problema específico</p>
-                    </li>
-                    <li>
-                        <i class="fas fa-file-alt"></i> <strong>Geração Documental</strong>
-                        <p>Criar um PRD básico utilizando IA como assistente</p>
-                    </li>
-                    <li>
-                        <i class="fas fa-code"></i> <strong>Codificação Híbrida</strong>
-                        <p>Implementar um pequeno projeto alternando entre código manual e assistido</p>
-                    </li>
-                </ul>
+                <div style="display: flex; flex-direction: column; gap: 20px; text-align: left;">
+                    <div style="background: rgba(255, 255, 255, 0.7); padding: 15px; border-radius: 10px; border-left: 4px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                            <i class="fas fa-users" style="color: var(--primary); font-size: 1.2rem; margin-right: 12px;"></i>
+                            <strong>Workshop de Brainstorming</strong>
+                        </div>
+                        <p style="margin: 5px 0 0 30px;">Simular uma sessão de ideação com 3 ferramentas de IA diferentes.</p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.7); padding: 15px; border-radius: 10px; border-left: 4px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                            <i class="fas fa-chart-bar" style="color: var(--primary); font-size: 1.2rem; margin-right: 12px;"></i>
+                            <strong>Análise Comparativa</strong>
+                        </div>
+                        <p style="margin: 5px 0 0 30px;">Avaliar prós e contras de diferentes abordagens para um problema específico.</p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.7); padding: 15px; border-radius: 10px; border-left: 4px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                            <i class="fas fa-file-alt" style="color: var(--primary); font-size: 1.2rem; margin-right: 12px;"></i>
+                            <strong>Geração Documental</strong>
+                        </div>
+                        <p style="margin: 5px 0 0 30px;">Criar um PRD básico utilizando IA como assistente.</p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.7); padding: 15px; border-radius: 10px; border-left: 4px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                            <i class="fas fa-code" style="color: var(--primary); font-size: 1.2rem; margin-right: 12px;"></i>
+                            <strong>Codificação Híbrida</strong>
+                        </div>
+                        <p style="margin: 5px 0 0 30px;">Implementar um pequeno projeto alternando entre código manual e assistido.</p>
+                    </div>
+                </div>
             </div>
-            <div class="slide-number">9</div>
+            <div class="slide-number">9/11</div>
         </div>
 
-        <!-- Slide 10: Avaliação e Recursos - ATUALIZADO com marcadores -->
+        <!-- Slide 10: Avaliação e Recursos -->
         <div class="slide" id="slide10">
+            <div class="dots-decoration"></div>
             <div class="content">
                 <h2>Avaliação e Recursos</h2>
                 <div class="two-col">
@@ -357,11 +354,12 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">10</div>
+            <div class="slide-number">10/11</div>
         </div>
 
         <!-- Slide 11: Conclusão -->
         <div class="slide" id="slide11">
+            <div class="circle-decoration"></div>
             <div class="content">
                 <h2>Conclusão</h2>
                 <div style="font-size: 1.3rem; line-height: 1.6; text-align: center; max-width: 700px;">
@@ -369,238 +367,17 @@
                         A integração de IA no desenvolvimento de projetos não substitui a participação humana, 
                         mas a potencializa, criando um fluxo de trabalho mais eficiente e produtivo.
                     </p>
-                    <p style="margin-top: 30px;">
+                    <p style="margin-top: 30px; background: linear-gradient(90deg, rgba(58, 134, 255, 0.1) 0%, rgba(131, 56, 236, 0.1) 100%); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
                         <strong>"O objetivo não é delegar o projeto à IA, mas sim trabalhar em colaboração,
                         mantendo a visão humana e aproveitando a eficiência computacional."</strong>
                     </p>
                 </div>
             </div>
-            <div class="slide-number">11</div>
+            <div class="slide-number">11/11</div>
             <div class="footer">Desenvolvimento de Projetos com Integração de IA</div>
         </div>
-
     </div>
 
-    <script>
-        const slideContainer = document.querySelector('.slide-container');
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        let currentSlide = 0;
-
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0) slideIndex = 0;
-            if (slideIndex >= slides.length) slideIndex = slides.length - 1;
-            
-            currentSlide = slideIndex;
-            slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            goToSlide(currentSlide - 1);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            goToSlide(currentSlide + 1);
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                goToSlide(currentSlide + 1);
-            } else if (e.key === 'ArrowLeft') {
-                goToSlide(currentSlide - 1);
-            }
-        });
-
-        // Update current slide on scroll
-        slideContainer.addEventListener('scroll', () => {
-            const containerTop = slideContainer.scrollTop;
-            for (let i = 0; i < slides.length; i++) {
-                const slideTop = slides[i].offsetTop;
-                if (Math.abs(containerTop - slideTop) < 100) {
-                    currentSlide = i;
-                    break;
-                }
-            }
-        });
-
-        // Adicione este script ao final do seu arquivo, depois do script existente
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('particles-ia');
-            const numParticles = 50; // Ajuste conforme necessário
-            const particles = [];
-            const connections = [];
-            const connectionDistance = 150;
-            
-            // Criar partículas
-            for (let i = 0; i < numParticles; i++) {
-                createParticle();
-            }
-            
-            // Função para criar partículas
-            function createParticle() {
-                const particle = document.createElement('div');
-                particle.classList.add('particle-ia');
-                
-                // Posição aleatória
-                const x = Math.random() * window.innerWidth;
-                const y = Math.random() * window.innerHeight;
-                
-                // Velocidade aleatória
-                const vx = (Math.random() - 0.5) * 0.5;
-                const vy = (Math.random() - 0.5) * 0.5;
-                
-                // Tamanho aleatório
-                const size = Math.random() * 2 + 2;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${x}px`;
-                particle.style.top = `${y}px`;
-                
-                // Adicionar um brilho pulsante para simular "atividade neural"
-                particle.style.animation = `pulse ${Math.random() * 3 + 2}s infinite alternate`;
-                
-                container.appendChild(particle);
-                
-                particles.push({
-                    element: particle,
-                    x: x,
-                    y: y,
-                    vx: vx,
-                    vy: vy,
-                    size: size,
-                    connections: []
-                });
-                
-                return particles[particles.length - 1];
-            }
-            
-            // Criar conexões iniciais entre nós próximos
-            function updateConnections() {
-                // Limpar conexões existentes
-                connections.forEach(conn => {
-                    if (conn.element && conn.element.parentNode) {
-                        conn.element.parentNode.removeChild(conn.element);
-                    }
-                });
-                connections.length = 0;
-                
-                // Criar novas conexões
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const p1 = particles[i];
-                        const p2 = particles[j];
-                        
-                        // Calcular distância entre partículas
-                        const dx = p2.x - p1.x;
-                        const dy = p2.y - p1.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        // Conectar apenas partículas próximas
-                        if (distance < connectionDistance) {
-                            const opacity = 1 - (distance / connectionDistance);
-                            createConnection(p1, p2, opacity);
-                        }
-                    }
-                }
-            }
-            
-            // Criar uma conexão visual entre duas partículas
-            function createConnection(p1, p2, opacity) {
-                const connection = document.createElement('div');
-                connection.classList.add('connection');
-                
-                // Posição e dimensionamento
-                const dx = p2.x - p1.x;
-                const dy = p2.y - p1.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const angle = Math.atan2(dy, dx);
-                
-                connection.style.width = `${distance}px`;
-                connection.style.left = `${p1.x}px`;
-                connection.style.top = `${p1.y}px`;
-                connection.style.opacity = opacity * 0.3;
-                connection.style.transform = `rotate(${angle}rad)`;
-                
-                container.appendChild(connection);
-                
-                connections.push({
-                    element: connection,
-                    p1: p1,
-                    p2: p2
-                });
-            }
-            
-            // Animação das partículas
-            function animate() {
-                for (let i = 0; i < particles.length; i++) {
-                    const p = particles[i];
-                    
-                    // Atualizar posição
-                    p.x += p.vx;
-                    p.y += p.vy;
-                    
-                    // Redirecionar se bater nas bordas
-                    if (p.x < 0 || p.x > window.innerWidth) {
-                        p.vx = -p.vx;
-                    }
-                    
-                    if (p.y < 0 || p.y > window.innerHeight) {
-                        p.vy = -p.vy;
-                    }
-                    
-                    // Manter dentro dos limites da tela
-                    p.x = Math.max(0, Math.min(window.innerWidth, p.x));
-                    p.y = Math.max(0, Math.min(window.innerHeight, p.y));
-                    
-                    // Atualizar posição visual
-                    p.element.style.left = `${p.x}px`;
-                    p.element.style.top = `${p.y}px`;
-                }
-                
-                // Atualizar conexões a cada X frames para economizar processamento
-                if (window.animationCounter % 10 === 0) {
-                    updateConnections();
-                }
-                
-                window.animationCounter = (window.animationCounter || 0) + 1;
-                
-                requestAnimationFrame(animate);
-            }
-            
-            // Recalcular em caso de redimensionamento da janela
-            window.addEventListener('resize', function() {
-                for (let i = 0; i < particles.length; i++) {
-                    const p = particles[i];
-                    
-                    // Manter partículas dentro dos novos limites
-                    p.x = Math.min(p.x, window.innerWidth);
-                    p.y = Math.min(p.y, window.innerHeight);
-                    
-                    p.element.style.left = `${p.x}px`;
-                    p.element.style.top = `${p.y}px`;
-                }
-                
-                updateConnections();
-            });
-            
-            // Adicionar CSS para animação de pulso
-            const style = document.createElement('style');
-            style.innerHTML = `
-                @keyframes pulse {
-                    0% { opacity: 0.3; transform: scale(0.8); }
-                    50% { opacity: 0.8; transform: scale(1.2); }
-                    100% { opacity: 0.3; transform: scale(0.8); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Iniciar animação
-            animate();
-            updateConnections();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
