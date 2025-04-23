@@ -1,0 +1,240 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+    height: 100%;
+    overflow: hidden;
+}
+.slide-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+.slide {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+.slide-number {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #888;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+}
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+ul, ol {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+li {
+    margin-bottom: 1rem;
+}
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+.flow-item {
+    padding: 15px 30px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    position: relative;
+    border: 2px solid #bdc3c7;
+    min-width: 300px;
+    text-align: center;
+}
+.diamond {
+    transform: rotate(45deg);
+    width: 120px;
+    height: 120px;
+    margin: 30px;
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    position: relative;
+}
+.diamond-content {
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+}
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #bdc3c7;
+}
+.highlight {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+    text-align: left;
+}
+.col {
+    flex: 1;
+}
+.footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+.navigation {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+.nav-btn {
+    background: #3498db;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.nav-btn:hover {
+    background: #2980b9;
+}
+
+/* Estilos específicos para o Slide 2 - FONTE AUMENTADA */
+#slide2 .content {
+    margin-top: -60px; 
+    padding-top: 0; 
+}
+
+#slide2 h2 {
+    font-size: 2.5rem; 
+    margin-top: 0; 
+    margin-bottom: 2rem; 
+}
+
+#slide2 ul {
+    font-size: 1.5rem; /* Lista com fonte maior */
+}
+
+#slide2 li {
+    margin-bottom: 1.3rem; /* Mais espaço entre itens para melhor legibilidade */
+    font-size: 1.5rem; /* Garantindo que os itens da lista também estão maiores */
+}
+
+/* Estilos específicos para o Slide 4 - FONTE AUMENTADA */
+#slide4 .content {
+    margin-top: -60px; /* Move todo o conteúdo para cima */
+    padding-top: 0; /* Remove padding superior caso exista */
+}           
+    
+ /* LOGO INSTITUCIONAL */
+ .logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px; /* Aumentado o tamanho */
+    z-index: 100; /* Garantindo que fique na frente de tudo */
+    opacity: 1; /* Opacidade total */
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* Estilo para os ícones em listas */
+li i.fa, li i.fas, li i.far {
+    margin-right: 10px;
+    color: #3498db; /* cor dos ícones igual à cor dos títulos h2 */
+}
+
+/* Remover o estilo padrão de marcadores das listas */
+ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+/* Manter o espaçamento apropriado para itens de lista com ícones */
+li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+li i {
+    margin-top: 5px;
+}
+
+
+.discrete-link {
+    font-size: 0.7rem;
+    color: rgba(52, 152, 219, 0.5);
+    margin-left: 5px;
+    vertical-align: super;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.discrete-link:hover {
+    color: rgba(52, 152, 219, 1);
+}
+
+.flow-item .discrete-link {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0.4;
+}
+
+.flow-item:hover .discrete-link {
+    opacity: 0.8;
+}
