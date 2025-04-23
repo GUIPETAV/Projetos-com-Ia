@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento de Projetos com Integração de IA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos para as partículas de IA */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle-ia {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: rgba(52, 152, 219, 0.5);
+            border-radius: 50%;
+        }
+        
+        .connection {
+            position: absolute;
+            height: 1px;
+            transform-origin: left center;
+            background: linear-gradient(90deg, rgba(52, 152, 219, 0.3), rgba(52, 152, 219, 0.05));
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        /* Ajustes para os títulos */
+        h1, h2, h3 {
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .slide .content {
+            overflow: auto;
+            padding: 20px;
+            max-height: 100%;
+        }
+        
+        /* Estilo uniforme para links nas caixas de fluxo */
+        .flow-item a, .flow-item a.canva-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        
+        .flow-item a:hover, .flow-item a.canva-link:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+        
+        .flow-item a i, .flow-item a.canva-link i {
+            margin-left: 8px;
+        }
+        
+        /* Melhor alinhamento para os textos nos slides 4 e 5 */
+        .two-col .col ul {
+            padding-left: 20px;
+            text-align: left;
+            margin-top: 10px;
+        }
+        
+        .two-col .col ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .two-col .col h3 {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        
+        /* Estilo para o link no PRD */
+        .prd-link {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .prd-link:hover {
+            text-decoration: underline;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <button class="nav-btn" id="prev">Anterior</button>
+        <button class="nav-btn" id="next">Próximo</button>
+    </div>
+
+    <div class="particles-container" id="particles-ia"></div>
+
+    <div class="slide-container">
+        <!-- Slide 1: Capa -->
+        <div class="slide" id="slide1">
+            <!-- Logo Institucional -->
+            <div class="logo">
+                <img src="https://www.es.senac.br/assets/img/logo.webp" alt="Logo SENAC">
+            </div>
+            <div class="content">
+                <h1>Desenvolvimento de Projetos com Integração de IA</h1>
+                <h2>Uma abordagem metodológica</h2>
+                <p class="intro-text">
+                    Guia prático para integrar Inteligência Artificial no fluxo de desenvolvimento de projetos
+                </p>
+                <p class="author"> <strong>Professor: Guilherme Peterlini</strong></p>
+                <!-- QR Code -->
+                <div style="margin-top: 20px; display: flex; justify-content: center;">
+                    <div style="text-align: center;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://guilhermepeterlini.com.br/Projetos-com-Ia/" alt="QR Code para Projetos com IA">
+                        <p style="margin-top: 5px; font-size: 0.8rem;">Acesse o material online</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">1</div>
+            <div class="footer">Abril, 2025</div>
+        </div>
+
+        <!-- Slide 2: Objetivos da Aula -->
+        <div class="slide" id="slide2">
+            <div class="content">
+                <h2>Objetivos da Aula</h2>
+                <ul>
+                    <li><i class="fas fa-project-diagram"></i> Compreender o fluxo de trabalho para desenvolvimento de projetos com IA.</li>
+                    <li><i class="fas fa-tasks"></i> Identificar as etapas críticas no processo de integração.</li>
+                    <li><i class="fas fa-robot"></i> Conhecer técnicas de colaboração homem-máquina.</li>
+                    <li><i class="fas fa-check-circle"></i> Aplicar metodologia estruturada em projetos reais.</li>
+                </ul>
+            </div>
+            <div class="slide-number">2</div>
+        </div>
+
+        <!-- Slide 3: Visão Geral do Fluxo -->
+        <div class="slide" id="slide3">
+            <div class="content">
+                <h2>Visão Geral do Fluxo</h2>
+                <div class="flow-container">
+                    <div class="flow-item">
+                        <a href="https://www.canva.com/design/DAGk0ZSZ3hk/kKIUUzMjPHNjk1rDmbXeVA/edit?utm_content=DAGk0ZSZ3hk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+                           class="canva-link" 
+                           target="_blank"
+                           rel="noopener"
+                           title="Ver projeto no Canva">
+                            Escolher Projeto
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">
+                        <a href="https://guilhermepeterlini.com.br/Brainstorm-com-as-IAS/" 
+                           class="canva-link" 
+                           target="_blank"
+                           rel="noopener"
+                           title="Ver Brainstorm com 3 IAs">
+                            Brainstorm com 3 IAs
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="diamond">
+                        <div class="diamond-content">Analisar Prós e Contras</div>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">
+                        <a href="https://recoverit.wondershare.com.br/online-file/ai-tools-for-literature-review.html" 
+                           class="canva-link" 
+                           target="_blank"
+                           rel="noopener"
+                           title="Ver ferramentas de IA para revisão de literatura">
+                            Buscar Artigos na Internet
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Obter Contexto para o Projeto</div>
+                </div>
+            </div>
+            <div class="slide-number">3</div>
+        </div>
+
+        <!-- Slide 4: Fase Inicial - ATUALIZADO com marcadores e melhor alinhamento -->
+        <div class="slide" id="slide4">
+            <div class="content">
+                <h2>Fase Inicial</h2>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Escolher Projeto</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Definição clara de escopo</li>
+                            <li><i class="fas fa-check"></i> Estabelecimento de objetivos</li>
+                            <li><i class="fas fa-check"></i> Identificação de requisitos iniciais</li>
+                            <li><i class="fas fa-check"></i> Avaliação de viabilidade</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Brainstorm com 3 IAs</h3>
+                        <ul>
+                            <li><i class="fas fa-lightbulb"></i> Diversidade de abordagens</li>
+                            <li><i class="fas fa-lightbulb"></i> Comparação de respostas</li>
+                            <li><i class="fas fa-lightbulb"></i> Técnicas de prompt engineering</li>
+                            <li><i class="fas fa-lightbulb"></i> Síntese de ideias complementares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">4</div>
+        </div>
+
+        <!-- Slide 5: Fase de Análise - ATUALIZADO com marcadores e melhor alinhamento -->
+        <div class="slide" id="slide5">
+            <div class="content">
+                <h2>Fase de Análise</h2>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Analisar Prós e Contras</h3>
+                        <ul>
+                            <li><i class="fas fa-balance-scale"></i> Matriz de decisão</li>
+                            <li><i class="fas fa-balance-scale"></i> Análise de riscos</li>
+                            <li><i class="fas fa-balance-scale"></i> Viabilidade técnica</li>
+                            <li><i class="fas fa-balance-scale"></i> Potencial de mercado</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Buscar Artigos na Internet</h3>
+                        <ul>
+                            <li><i class="fas fa-search"></i> Pesquisa científica relevante</li>
+                            <li><i class="fas fa-search"></i> Benchmarking de soluções</li>
+                            <li><i class="fas fa-search"></i> Estado da arte da tecnologia</li>
+                            <li><i class="fas fa-search"></i> Validação técnica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">5</div>
+        </div>
+
+        <!-- Slide 6: Fase de Documentação - ATUALIZADO com link para o ADR -->
+        <div class="slide" id="slide6">
+            <div class="content">
+                <h2>Fase de Documentação</h2>
+                <div class="flow-container">
+                    <div class="flow-item">Obter Contexto para o Projeto</div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Solicitar Geração de Documentos</div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Gerar PRD e ADR</div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Revisar Documentos</div>
+                </div>
+                <div style="text-align: left; margin-top: 30px;">
+                    <p><strong>PRD:</strong> <a href="https://pm3.com.br/glossario/prd-product-requirements-document/" class="prd-link" target="_blank" rel="noopener">Product Requirements Document <i class="fas fa-external-link-alt"></i></a></p>
+                    <p><strong>ADR:</strong> <a href="https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file#what-is-an-architecture-decision-record" class="prd-link" target="_blank" rel="noopener">Architecture Decision Records <i class="fas fa-external-link-alt"></i></a></p>
+                </div>
+            </div>
+            <div class="slide-number">6</div>
+        </div>
+
+        <!-- Slide 7: Fase de Implementação - ATUALIZADO para fluxo linear -->
+        <div class="slide" id="slide7">
+            <div class="content">
+                <h2>Fase de Implementação</h2>
+                <div class="flow-container">
+                    <div class="flow-item">Aprender Tecnologias Necessárias</div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Gerar Códigos Pontuais pela IA</div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Codificar à Mão</div>
+                    <div class="arrow-down"></div>
+                    <div class="flow-item">Revisões Esporádicas pela IA</div>
+                </div>
+            </div>
+            <div class="slide-number">7</div>
+        </div>
+
+        <!-- Slide 8: Benefícios do Método -->
+        <div class="slide" id="slide8">
+            <div class="content">
+                <h2>Benefícios do Método</h2>
+                <ul>
+                    <li><span class="highlight">Aceleração</span> do processo de desenvolvimento</li>
+                    <li>Manutenção do <span class="highlight">controle humano</span> sobre decisões críticas</li>
+                    <li><span class="highlight">Redução</span> de erros e retrabalho</li>
+                    <li>Aproveitamento das <span class="highlight">competências específicas</span> de cada IA</li>
+                    <li>Criação de documentação <span class="highlight">mais consistente</span> e completa</li>
+                    <li><span class="highlight">Aprendizado contínuo</span> durante o processo</li>
+                </ul>
+            </div>
+            <div class="slide-number">8</div>
+        </div>
+
+        <!-- Slide 9: Atividades Práticas - ATUALIZADO com marcadores -->
+        <div class="slide" id="slide9">
+            <div class="content">
+                <h2>Atividades Práticas</h2>
+                <ul>
+                    <li>
+                        <i class="fas fa-users"></i> <strong>Workshop de Brainstorming</strong>
+                        <p>Simular uma sessão de ideação com 3 ferramentas de IA diferentes</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-bar"></i> <strong>Análise Comparativa</strong>
+                        <p>Avaliar prós e contras de diferentes abordagens para um problema específico</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-alt"></i> <strong>Geração Documental</strong>
+                        <p>Criar um PRD básico utilizando IA como assistente</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-code"></i> <strong>Codificação Híbrida</strong>
+                        <p>Implementar um pequeno projeto alternando entre código manual e assistido</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="slide-number">9</div>
+        </div>
+
+        <!-- Slide 10: Avaliação e Recursos - ATUALIZADO com marcadores -->
+        <div class="slide" id="slide10">
+            <div class="content">
+                <h2>Avaliação e Recursos</h2>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Método de Avaliação</h3>
+                        <ul>
+                            <li><i class="fas fa-clipboard-check"></i> Projeto prático seguindo o fluxo apresentado</li>
+                            <li><i class="fas fa-file-alt"></i> Documentação do processo</li>
+                            <li><i class="fas fa-brain"></i> Reflexões sobre cada etapa</li>
+                            <li><i class="fas fa-chalkboard-teacher"></i> Apresentação dos resultados</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Recursos Recomendados</h3>
+                        <ul>
+                            <li><i class="fas fa-comment-dots"></i> Plataformas de IA conversacional</li>
+                            <li><i class="fas fa-file-code"></i> Ferramentas de documentação assistida</li>
+                            <li><i class="fas fa-laptop-code"></i> Ambientes de desenvolvimento com copilots</li>
+                            <li><i class="fas fa-book"></i> Materiais sobre boas práticas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">10</div>
+        </div>
+
+        <!-- Slide 11: Conclusão -->
+        <div class="slide" id="slide11">
+            <div class="content">
+                <h2>Conclusão</h2>
+                <div style="font-size: 1.3rem; line-height: 1.6; text-align: center; max-width: 700px;">
+                    <p>
+                        A integração de IA no desenvolvimento de projetos não substitui a participação humana, 
+                        mas a potencializa, criando um fluxo de trabalho mais eficiente e produtivo.
+                    </p>
+                    <p style="margin-top: 30px;">
+                        <strong>"O objetivo não é delegar o projeto à IA, mas sim trabalhar em colaboração,
+                        mantendo a visão humana e aproveitando a eficiência computacional."</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="slide-number">11</div>
+            <div class="footer">Desenvolvimento de Projetos com Integração de IA</div>
+        </div>
+
+    </div>
+
+    <script>
+        const slideContainer = document.querySelector('.slide-container');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        let currentSlide = 0;
+
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0) slideIndex = 0;
+            if (slideIndex >= slides.length) slideIndex = slides.length - 1;
+            
+            currentSlide = slideIndex;
+            slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentSlide - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentSlide + 1);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                goToSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft') {
+                goToSlide(currentSlide - 1);
+            }
+        });
+
+        // Update current slide on scroll
+        slideContainer.addEventListener('scroll', () => {
+            const containerTop = slideContainer.scrollTop;
+            for (let i = 0; i < slides.length; i++) {
+                const slideTop = slides[i].offsetTop;
+                if (Math.abs(containerTop - slideTop) < 100) {
+                    currentSlide = i;
+                    break;
+                }
+            }
+        });
+
+        // Adicione este script ao final do seu arquivo, depois do script existente
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('particles-ia');
+            const numParticles = 50; // Ajuste conforme necessário
+            const particles = [];
+            const connections = [];
+            const connectionDistance = 150;
+            
+            // Criar partículas
+            for (let i = 0; i < numParticles; i++) {
+                createParticle();
+            }
+            
+            // Função para criar partículas
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.classList.add('particle-ia');
+                
+                // Posição aleatória
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                
+                // Velocidade aleatória
+                const vx = (Math.random() - 0.5) * 0.5;
+                const vy = (Math.random() - 0.5) * 0.5;
+                
+                // Tamanho aleatório
+                const size = Math.random() * 2 + 2;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                
+                // Adicionar um brilho pulsante para simular "atividade neural"
+                particle.style.animation = `pulse ${Math.random() * 3 + 2}s infinite alternate`;
+                
+                container.appendChild(particle);
+                
+                particles.push({
+                    element: particle,
+                    x: x,
+                    y: y,
+                    vx: vx,
+                    vy: vy,
+                    size: size,
+                    connections: []
+                });
+                
+                return particles[particles.length - 1];
+            }
+            
+            // Criar conexões iniciais entre nós próximos
+            function updateConnections() {
+                // Limpar conexões existentes
+                connections.forEach(conn => {
+                    if (conn.element && conn.element.parentNode) {
+                        conn.element.parentNode.removeChild(conn.element);
+                    }
+                });
+                connections.length = 0;
+                
+                // Criar novas conexões
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p1 = particles[i];
+                        const p2 = particles[j];
+                        
+                        // Calcular distância entre partículas
+                        const dx = p2.x - p1.x;
+                        const dy = p2.y - p1.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        // Conectar apenas partículas próximas
+                        if (distance < connectionDistance) {
+                            const opacity = 1 - (distance / connectionDistance);
+                            createConnection(p1, p2, opacity);
+                        }
+                    }
+                }
+            }
+            
+            // Criar uma conexão visual entre duas partículas
+            function createConnection(p1, p2, opacity) {
+                const connection = document.createElement('div');
+                connection.classList.add('connection');
+                
+                // Posição e dimensionamento
+                const dx = p2.x - p1.x;
+                const dy = p2.y - p1.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const angle = Math.atan2(dy, dx);
+                
+                connection.style.width = `${distance}px`;
+                connection.style.left = `${p1.x}px`;
+                connection.style.top = `${p1.y}px`;
+                connection.style.opacity = opacity * 0.3;
+                connection.style.transform = `rotate(${angle}rad)`;
+                
+                container.appendChild(connection);
+                
+                connections.push({
+                    element: connection,
+                    p1: p1,
+                    p2: p2
+                });
+            }
+            
+            // Animação das partículas
+            function animate() {
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    
+                    // Atualizar posição
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    
+                    // Redirecionar se bater nas bordas
+                    if (p.x < 0 || p.x > window.innerWidth) {
+                        p.vx = -p.vx;
+                    }
+                    
+                    if (p.y < 0 || p.y > window.innerHeight) {
+                        p.vy = -p.vy;
+                    }
+                    
+                    // Manter dentro dos limites da tela
+                    p.x = Math.max(0, Math.min(window.innerWidth, p.x));
+                    p.y = Math.max(0, Math.min(window.innerHeight, p.y));
+                    
+                    // Atualizar posição visual
+                    p.element.style.left = `${p.x}px`;
+                    p.element.style.top = `${p.y}px`;
+                }
+                
+                // Atualizar conexões a cada X frames para economizar processamento
+                if (window.animationCounter % 10 === 0) {
+                    updateConnections();
+                }
+                
+                window.animationCounter = (window.animationCounter || 0) + 1;
+                
+                requestAnimationFrame(animate);
+            }
+            
+            // Recalcular em caso de redimensionamento da janela
+            window.addEventListener('resize', function() {
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    
+                    // Manter partículas dentro dos novos limites
+                    p.x = Math.min(p.x, window.innerWidth);
+                    p.y = Math.min(p.y, window.innerHeight);
+                    
+                    p.element.style.left = `${p.x}px`;
+                    p.element.style.top = `${p.y}px`;
+                }
+                
+                updateConnections();
+            });
+            
+            // Adicionar CSS para animação de pulso
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes pulse {
+                    0% { opacity: 0.3; transform: scale(0.8); }
+                    50% { opacity: 0.8; transform: scale(1.2); }
+                    100% { opacity: 0.3; transform: scale(0.8); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Iniciar animação
+            animate();
+            updateConnections();
+        });
+    </script>
+</body>
+</html>
